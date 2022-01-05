@@ -1,0 +1,55 @@
+Battleship page 1 (Start Page)
+https://wireframe.cc/fiV2iw
+
+
+
+======player set up ships=========
+Make grid 10x10
+make each section of grid be a button
+on click of "button" change matrix grid in background to a 1
+///// How can I limit the spaces they select per ship ( so in the 2x1 ship they can only select two spaces next to each other, 3x1 only 3 spaces etc. )
+//// OR how can I make it so each matrix corresponds so a coordinate having the top be letters and sides be numbers?
+	  A,B,C,D,E,F,G,H,I,J
+	1[0,0,0,0,0,0,0,0,0,0]
+	2[0,0,0,0,0,0,0,0,0,0]
+	3[0,0,0,0,0,0,0,0,0,0]
+	4[0,0,0,0,0,0,0,0,0,0]
+	5[0,0,0,0,0,0,0,0,0,0]
+	6[0,0,0,0,0,0,0,0,0,0]
+	7[0,0,0,0,0,0,0,0,0,0]
+	8[0,0,0,0,0,0,0,0,0,0]
+	9[0,0,0,0,0,0,0,0,0,0]
+	0[0,0,0,0,0,0,0,0,0,0]
+
+Once all ships are assigned have it check to make sure there are all spots assigned (total between all 4 ships it should be 14 spots so make sure there are 14 "1"s in the matrix) if not alert asking them to check the ships assigned
+Once ships are assigned toggle to player two set up repeat steps for player two.
+Once ships are set up toggle to Player one screen where they have two grids one corresponding to their grid and another corresponding to Player two grid but blank 
+
+		Player 1			Player 2
+
+	  A,B,C,D,E,F,G,H,I,J		  A,B,C,D,E,F,G,H,I,J
+	1[1,0,0,0,0,0,0,0,0,0]		1[0,0,0,0,0,0,0,0,0,0]
+	2[1,0,0,0,0,0,0,0,0,0]		2[0,0,0,0,0,0,0,0,0,0]
+	3[0,0,1,1,1,0,0,0,0,0]		3[0,0,0,0,0,0,0,0,0,0]
+	4[0,0,0,0,0,0,0,0,0,0]		4[0,0,0,0,0,0,0,0,0,0]
+	5[0,0,0,0,1,0,0,0,0,0]		5[0,0,0,0,0,0,0,0,0,0]
+	6[0,0,0,0,1,0,0,0,0,0]		6[0,0,0,0,0,0,0,0,0,0]
+	7[0,0,0,0,1,0,0,0,0,0]		7[0,0,0,0,0,0,0,0,0,0]
+	8[0,0,0,0,1,0,0,0,0,0]		8[0,0,0,0,0,0,0,0,0,0]
+	9[0,0,0,0,0,0,0,0,0,0]		9[0,0,0,0,0,0,0,0,0,0]
+	0[0,0,0,1,1,1,1,1,0,0]		0[0,0,0,0,0,0,0,0,0,0]
+
+When its player 1 turn they get assigned 1 torpedo this is what allows them to click on player 2 grid and have it perform check below. if it doesnt detect torpedo for player 1 then it will alert saying "You are out of Ammo next player's turn!"
+they can click on player 2 grid which will check against player 2's set up if they click on A,3 then it checks against player 2s grid if it equals a "1" then alert appears stating HIT! and the button on the grid changes to red or another color. it also adds "torpedo" to player one allowing them to shoot again. 
+
+upon clicking end turn button at bottom it will toggle to inbetween screen which will display whos turn it is with a confirmation button below
+
+upon clicking confirmation button it will toggle to player 2s turn and restart the process assigning torpedo and continuing from there. 
+
+
+
+Questions:
+1. How can I limit the spaces they select per ship ( so in the 2x1 ship they can only select two spaces next to each other, 3x1 only 3 spaces etc. )
+1a. OR how can I make it so each matrix corresponds so a coordinate having the top be letters and sides be numbers?
+2. can you toggle between 3 or 4 classes?
+
