@@ -8,8 +8,6 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-
-
 <body>
     <!--Title screen class, will collect players names and then toggle onto the player select screen.-->
 <div class="titleScreen" id="Title">    
@@ -22,62 +20,64 @@
     <br>
     <label for="p2name"> Player 2:</label>
     <input type="text" id="p2name" name="name">
-    <label for="submitBtn" class="toggleTitle"> Submit</label>
-    <input type="button" id="submitBtn" onclick="toggleP1Select()">
-
+    <br>
+    <br>
+    <label for="submitBtn" ></label>
+    <input type="button" id="submitBtn"/>
+       
 </div>
 
 <div id="p1NextPlayerStart">
      <h2>TEST Player One Start Next Screen</h2>
         <label for="P1NextStart" > Player One Place Ships</label>
-    <input type="button" id="P1NextStart" onclick="toggleP1StartSelect()">
+    <input type="button" id="P1NextStart">
 </div>
 
     <div class="playerSelect" id="playerOneSelect">
         <h2>TEST Player One Select Screen</h2>
-        <!--<div id = "boardgame"></div> -->
+        <div class="playerSelect" id = "boardgame"></div>
         <label for="p1SelectStart" > Next Player</label>
-    <input type="button" id="p1SelectStart" onclick="toggleP2NextPlayer()">
+    <input type="button" id="p1SelectStart">
     </div>
 
     <div class="nextPlayer" id="p2NextPlayerStart">
         <h2>TEST Player Two Next Player Start Screen</h2>
         <label for="p2NextStart" > Player Two Place Ships</label>
-    <input type="button" id="p2NextStart" onclick="toggleP2Select()">
+    <input type="button" id="p2NextStart">
     </div>
 <div class="playerSelect" id="playerTwoSelect">
         <h2>Player Two Select Screen</h2>
         <label for="p2SelectStart">Start Game</label>
-        <input type="button" id="p2SelectStart" onclick="toggleP1NextStartGame()"></div>
+        <input type="button" id="p2SelectStart"></div>
     
 <div class="nextPlayer" id="nextPlayerScreenP1">
     <h2> is Player One Next Player screen to start the game.</h2>
         <label for="p1GameStart">Start Game Player One Turn</label>
-        <input type="button" id="p1GameStart" onclick="toggleP1GameScreen()">
+        <input type="button" id="p1GameStart" >
 </div>
 
                 <div class="GameScreen" id="playerOneGameScreen">
                <h2> Player One Game Screen</h2>
                     <label for = "p1GameNextStart">Start Game</label>
-                    <input type="button" id="p1GameNextStart" onclick="toggleOnGoingP2Next()">
+                    <input type="button" id="p1GameNextStart" >
                 </div>
 
         <div class="nextPlayer" id="nextPlayerScreenP2">
            <h2>TEST Player Two Next Player Screen </h2>
            <label for = "p2NextPlayer">Player Two Take Turn</label>
-           <input type="button" id="p2NextPlayer" onclick="toggleP2GameScreen()">
+           <input type="button" id="p2NextPlayer" >
         </div>
 
-             <div class="GameScreen" id="playerTwoGameScreen">
+    <div class="GameScreen" id="playerTwoGameScreen">
             <h2>Test Player Two Game Screen</h2>
             <label for = "p2GameScreen">End Turn</label>
            <input type="button" id="p2GameScreen" onclick="toggleOnGoingP1Next()"
-            </div>
+    </div>
 
     <div class="victoryScreen" id="endGameScreen">
         Test Game Over click New Game to Play Again!
     </div>
 
-<script src="app.js"></script>
+    <script type="text/javascript" src="app.js"></script>
 </body>
 </html>
