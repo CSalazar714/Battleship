@@ -1,10 +1,6 @@
-const columns = 10;
-const rows = 10;
-const squareSize = 50;
-
-const player1Arr = []
-const player2Arr = []
-
+let rows = 10;
+let columns = 10;
+let squareSize = 50;
 
 let titleContent = document.getElementById("Title");
 let p1Select = document.getElementById("playerOneSelect");
@@ -17,99 +13,158 @@ let p1GameScreen = document.getElementById("playerOneGameScreen");
 let p2GameScreen = document.getElementById("playerTwoGameScreen");
 let winnerScreen = document.getElementById("endGameScreen");
 //This goes from TITLE to PLAYER ONE NEXT PLAYER SCREEN
-
+// titleContent.classList.toggle("show")
 
 function toggleP1Select(){ console.log("clicked");
     titleContent.classList.toggle("hide");
-    p1NextStart.style.display == "none" ? titleContent.style.display = "none" : p1NextStart.style.display = "block";
+    titleContent.classList.remove("show")
+    p1NextStart.classList.toggle("show");
 }
 
 //This goes from PLAYER ONE NEXT PLAYER SCREEN to PLAYER ONE SELECT SCREEN
 function toggleP1StartSelect(){
-    p1NextStart.style.display = "none"
-    p1Select.style.display == "none" ? p1NextStart.style.display = "none" : p1Select.style.display = "block";
+    p1NextStart.classList.toggle("hide");
+    p1NextStart.classList.remove("show");
+    p1Select.classList.toggle("show");
 }
 //This command goes from PLAYER ONE SELECT SCREEN to PLAYER TWO NEXT PLAYER SCREEN //
 function toggleP2NextPlayer(){
-    p1Select.style.display = "none"
-    p2NextStart.style.display == "none" ? p1Select.style.display = "none" : p2NextStart.style.display = "block";
+    p1Select.classList.toggle("hide");
+    p1Select.classList.remove("show")
+    p2NextStart.classList.toggle("show")
 }
 //This command goes from PLAYER TWO NEXT PLAYER SCREEN to PLAYER TWO SELECT SCREEN//
 function toggleP2Select(){
-    p2NextStart.style.display = "none"
-    p2Select.style.display == "none" ? p2NextStart.style.display = "none" : p2Select.style.display = "block";
+    p2NextStart.classList.toggle("hide");
+    p2NextStart.classList.remove("show");
+    p2Select.classList.toggle("show")
 }
 //This command goes from PLAYER TWO SELECT SCREEN to PLAYER ONE NEXT PLAYER SCREEN//
 function toggleP1NextStartGame(){
-    p2Select.style.display = "none"
-    p1NextPlayer.style.display == "none" ? p2Select.style.display = "none" : p1NextPlayer.style.display = "block";
+    p2Select.classList.toggle("hide");
+    p2Select.classList.remove("show");
+    p1NextPlayer.classList.toggle("show")
+    
 }
 //This command goes from PLAYER ONE NEXT PLAYER SCREEN to PLAYER ONE GAME SCREEN//
 function toggleP1GameScreen(){
-    p1NextPlayer.style.display = "none"
-    p1GameScreen.style.display == "none" ? p1NextPlayer.style.display = "none" : p1GameScreen.style.display = "block";
+    p1NextPlayer.classList.toggle("hide");
+    p1NextPlayer.classList.remove("show");
+    p1GameScreen.classList.toggle("show")
 }
 //This goes from PLAYER ONE GAME SCREEN to PLAYER TWO NEXT PLAYER SCREEN//
 function toggleOnGoingP2Next(){
-    p1GameScreen.style.display = "none"
-    p2NextPlayer.style.display == "none" ? p1GameScreen.style.display = "none" : p2NextPlayer.style.display = "block";
+    p1GameScreen.classList.toggle("hide");
+    p1GameScreen.classList.remove("show");
+    p2NextPlayer.classList.toggle("show")
 }
 //This goes from PLAYER TWO NEXT PLAYER SCREEN to PLAYER TWO GAME SCREEN//
 function toggleP2GameScreen(){
-    p2NextPlayer.style.display = "none"
-    p2GameScreen.style.display == "none" ? p2NextPlayer.style.display = "none" : p2GameScreen.style.display = "block";
+    p2NextPlayer.classList.toggle("hide");
+    p2NextPlayer.classList.remove("show");
+    p2GameScreen.classList.toggle("show")
 }
 //This goes from PLAYER TWO GAME SCREEN to PLAYER ONE NEXT PLAYER SCREEN
 function toggleOnGoingP1Next(){
-    p2GameScreen.style.display = "none"
-    p1NextPlayer.style.display == "none" ? p2GameScreen.style.display = "none" : p1NextPlayer.style.display = "block";
-}
-
-let boardgameGrid = document.getElementById("boardgame")
-
-for(let c = 0; c < columns; c++) {
-    // player1Arr[c] = [];
-    // player2Arr[c] = [];
-    for(let r = 0 ; r < rows; r++){
-        // player1Arr[c][r] = 0;
-        // player2Arr[c][r] = 0
-       let square = document.createElement("div");
-       boardgameGrid.appendChild(square) ;
-       square.id = 'x'+ c + r;
-
-    let top = c * squareSize;
-    let left = r * squareSize
-    square.style.top = top + 'px';
-	square.style.left = left + 'px';
-}
-}
-
-
-
-//console.log (player1Arr);
-//console.log (player2Arr);
-
-
-let board = [
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0]]
+    p2GameScreen.classList.toggle("hide");
+    p2GameScreen.classList.remove("show");
+    p1NextPlayer.classList.toggle("show")
     
-    
-    submitBtn.addEventListener("click",toggleP1Select)
-    P1NextStart.addEventListener("click",toggleP1StartSelect)
-    p1SelectStart.addEventListener("click",toggleP2NextPlayer)
-    p2NextStart.addEventListener("click",toggleP2Select)
-    p2SelectStart.addEventListener("click",toggleP1NextStartGame)
-    p1GameStart.addEventListener("click",toggleP1GameScreen)
-    p1GameNextStart.addEventListener("click",toggleOnGoingP2Next)
-    p2NextPlayer.addEventListener("click",toggleP2GameScreen)
-    p2GameScreen.addEventListener("click",toggleOnGoingP1Next)
-    // endGameScreen.addEventListener("click",toggleOnGoingP2Next)
+}
+
+
+let gameBoardGrid = document.getElementById("board");
+
+for (c = 0; c < columns; c++) {
+	for (r = 0; r < rows; r++) {
+		
+		let square = document.createElement("div");
+		gameBoardGrid.appendChild(square);
+
+		square.id = 'x' + r + c;			
+		
+		let top = r * squareSize;
+		let left = c * squareSize;			
+		
+		square.style.top = top + 'px';
+		square.style.left = left + 'px';						
+	}
+}
+
+let hitCount = 0;
+
+let gameBoard = [
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0]
+				]
+
+// set event listener for all elements in gameboard, run fireTorpedo function when square is clicked
+gameBoardGrid.addEventListener("click", fireTorpedo, false);
+let gameBoardPlayer1 = gameBoard
+let gameBoardPlayer2 = gameBoard
+
+// https://www.kirupa.com/html5/handling_events_for_many_elements.htm#tutorialInformation
+function fireTorpedo(e) {
+   
+	if (e.target !== e.currentTarget) {
+        // extract row and column # from the HTML element's id
+		let row = e.target.id.substring(1,2);
+		let col = e.target.id.substring(2,3);
+        //console.log("Clicked on row " + row + ", col " + col);
+				
+		if (gameBoard[row][col] == 0) {
+			e.target.style.background = 'blue';
+			gameBoard[row][col] = 3;
+			
+		    } else if (gameBoard[row][col] == 1) {
+			    e.target.style.background = 'red';
+			    gameBoard[row][col] = 2;
+			    hitCount++;
+			
+			    if (hitCount == 17) {
+				//Run Endgame Victory Screen
+			    }
+		    } else if (gameBoard[row][col] > 1) {
+			    alert("This location has already been hit!");
+		}		
+    }console.log(gameBoard)
+    e.stopPropagation();
+}
+
+function shipPlacement(e) {
+    // if item clicked (e.target) is not the parent element on which the event listener was set (e.currentTarget)
+	if (e.target !== e.currentTarget) {
+        // extract row and column # from the HTML element's id
+		let row = e.target.id.substring(1,2);
+		let col = e.target.id.substring(2,3);
+        //alert("Clicked on row " + row + ", col " + col);
+				
+		
+		if (gameBoardPlayer1[row][col] == 0) {
+			e.target.style.background = '#bbb';
+			
+			gameBoardPlayer1[row][col] = 1;
+			
+		} else if (gameBoardPlayer1[row][col] == 1) {
+			e.target.style.background = 'red';
+			
+			gameBoardPlayer1[row][col] = 0;
+            
+			shipCount++;
+			if (shipCount == 17) {
+				alert(`You have placed all your ships click "Continue" to finish` );
+			}
+			
+		
+		} 	
+    }
+    e.stopPropagation();
+}
