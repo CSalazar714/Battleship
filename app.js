@@ -101,7 +101,7 @@ let winnerScreen = document.getElementById("endGameScreen");
 
 
 let gameBoardGrid = document.getElementById("board");
-gameBoardGrid.className = classname;
+// gameBoardGrid.className = classname;
 
 for (c = 0; c < columns; c++) {
 	for (r = 0; r < rows; r++) {
@@ -136,8 +136,8 @@ let gameBoard = [
 
 // set event listener for all elements in gameboard, run fireTorpedo function when square is clicked
 gameBoardGrid.addEventListener("click", fireTorpedo, false);
-gameBoardGrid.addEventListener("click", shipPlacementP1, false);
-gameBoardGrid.addEventListener("click", shipPlacementP2, false);
+// gameBoardGrid.addEventListener("click", shipPlacementP1, false);
+// gameBoardGrid.addEventListener("click", shipPlacementP2, false);
 
 let gameBoardPlayer1 = gameBoard
 let gameBoardPlayer2 = gameBoard
@@ -154,11 +154,13 @@ function fireTorpedo(e) {
 		if (gameBoard[row][col] == 0) {
 			e.target.style.background = 'blue';
 			gameBoard[row][col] = 3;
-			console.log(hitCount)
+			console.log(gameBoard)
+			
 		    } else if (gameBoard[row][col] == 1) {
 			    e.target.style.background = 'red';
 			    gameBoard[row][col] = 2;
 			    hitCount++;
+				console.log(hitCount)
 			
 			    if (hitCount == 17) {alert("Game Over You Win!")
 				//Run Endgame Victory Screen
