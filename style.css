@@ -2,7 +2,8 @@ body {
   margin: 60px auto;
   width: 70%;
   max-width: 950px;
-  background-image: url(images/Ocean.jpg);
+  background-image: url(images/movingOcean.gif);
+  background-size: 100%;
 }
 
 h1 {
@@ -12,7 +13,10 @@ h1 {
 .titleScreen{
   background-image: url(images/battleshipimage.jpg);
   background-size: 100%;
+  color: white;
+  
 }
+
 
 p, button, input {
   font-size: 1.5em;

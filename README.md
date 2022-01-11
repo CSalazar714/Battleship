@@ -32,5 +32,7 @@ Title Image: https://nationalinterest.org/sites/default/files/main_images/artem-
 
 Upcoming Features:
 1.shifting pages between players
-2.End Game screen announcing player
-3.Cannon shooting sounds when hit/ Splashing sound when miss. 
+2.Limit size of ships
+3.End Game screen announcing player
+4.Cannon shooting sounds when hit/ Splashing sound when miss. 
+5.Opacity for text to make it more legible.
