@@ -2,11 +2,16 @@ body {
   margin: 60px auto;
   width: 70%;
   max-width: 950px;
+  background-image: url(images/Ocean.jpg);
 }
 
 h1 {
   font-size: 3em;
   ;
+}
+.titleScreen{
+  background-image: url(images/battleshipimage.jpg);
+  background-size: 100%;
 }
 
 p, button, input {

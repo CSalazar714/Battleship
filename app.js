@@ -22,7 +22,7 @@ let winnerScreen = document.getElementById("endGameScreen");
 // p1GameNextStart.addEventListener("click",toggleOnGoingP2Next)
 // p2NextPlayer.addEventListener("click",toggleP2GameScreen)
 // p2GameScreen.addEventListener("click",toggleOnGoingP1Next)
-
+//// Toggle show and hide features to change pages
 // let ToggleView = document.querySelector("#Pages");
 // ToggleView.addEventListener("click", ToggleFunc, false);
 

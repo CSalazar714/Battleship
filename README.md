@@ -25,3 +25,12 @@ https://www.wikihow.com/Toggle-HTML-Display-With-JavaScript#:~:text=Here%27s%20a
 
 Netlify Page:
 https://ecstatic-cray-981612.netlify.app
+
+Image resources:
+Background: https://cdn.wallpapersafari.com/15/27/fyRS0Q.jpg
+Title Image: https://nationalinterest.org/sites/default/files/main_images/artem-konstantinov-artem-konstantinov-battleship.jpg
+
+Upcoming Features:
+1.shifting pages between players
+2.End Game screen announcing player
+3.Cannon shooting sounds when hit/ Splashing sound when miss. 
