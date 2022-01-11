@@ -23,4 +23,5 @@ Resources:
 Toggle functions:
 https://www.wikihow.com/Toggle-HTML-Display-With-JavaScript#:~:text=Here%27s%20a%20quick%20JavaScript%20trick%20to%20control%20display,want%20to%20toggle%20display%20with%20in%20a%20container.
 
-
+Netlify Page:
+https://ecstatic-cray-981612.netlify.app

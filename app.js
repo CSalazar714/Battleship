@@ -13,31 +13,31 @@ let p1GameScreen = document.getElementById("playerOneGameScreen");
 let p2GameScreen = document.getElementById("playerTwoGameScreen");
 let winnerScreen = document.getElementById("endGameScreen");
 //Buttons
-submitBtn.addEventListener("click",toggleP1Select)
-P1NextStart.addEventListener("click",toggleP1StartSelect)
-p1SelectStart.addEventListener("click",toggleP2NextPlayer)
-p2NextStart.addEventListener("click",toggleP2Select)
-p2SelectStart.addEventListener("click",toggleP1NextStartGame)
-p1GameStart.addEventListener("click",toggleP1GameScreen)
-p1GameNextStart.addEventListener("click",toggleOnGoingP2Next)
-p2NextPlayer.addEventListener("click",toggleP2GameScreen)
-p2GameScreen.addEventListener("click",toggleOnGoingP1Next)
+// submitBtn.addEventListener("click",toggleP1Select)
+// P1NextStart.addEventListener("click",toggleP1StartSelect)
+// p1SelectStart.addEventListener("click",toggleP2NextPlayer)
+// p2NextStart.addEventListener("click",toggleP2Select)
+// p2SelectStart.addEventListener("click",toggleP1NextStartGame)
+// p1GameStart.addEventListener("click",toggleP1GameScreen)
+// p1GameNextStart.addEventListener("click",toggleOnGoingP2Next)
+// p2NextPlayer.addEventListener("click",toggleP2GameScreen)
+// p2GameScreen.addEventListener("click",toggleOnGoingP1Next)
 
-let ToggleView = document.querySelector("#Pages");
-ToggleView.addEventListener("click", ToggleFunc, false);
+// let ToggleView = document.querySelector("#Pages");
+// ToggleView.addEventListener("click", ToggleFunc, false);
 
-function ToggleFunc(event) {
-	if(event.target.className == 'Pages')
-	{
-		let next = event.target.nextElementSibling;
+// function ToggleFunc(event) {
+// 	if(event.target.className == 'Pages')
+// 	{
+// 		let next = event.target.nextElementSibling;
 
-		if(next.style.display == "none"){
-			next.stlye.display = "block";
-		} else {
-			next.style.display = "none";
-		}
-	}
-}
+// 		if(next.style.display == "none"){
+// 			next.stlye.display = "block";
+// 		} else {
+// 			next.style.display = "none";
+// 		}
+// 	}
+// }
 
 
 //This goes from TITLE to PLAYER ONE NEXT PLAYER SCREEN
@@ -101,6 +101,7 @@ function ToggleFunc(event) {
 
 
 let gameBoardGrid = document.getElementById("board");
+gameBoardGrid.className = classname;
 
 for (c = 0; c < columns; c++) {
 	for (r = 0; r < rows; r++) {
@@ -135,6 +136,9 @@ let gameBoard = [
 
 // set event listener for all elements in gameboard, run fireTorpedo function when square is clicked
 gameBoardGrid.addEventListener("click", fireTorpedo, false);
+gameBoardGrid.addEventListener("click", shipPlacementP1, false);
+gameBoardGrid.addEventListener("click", shipPlacementP2, false);
+
 let gameBoardPlayer1 = gameBoard
 let gameBoardPlayer2 = gameBoard
 
@@ -150,39 +154,37 @@ function fireTorpedo(e) {
 		if (gameBoard[row][col] == 0) {
 			e.target.style.background = 'blue';
 			gameBoard[row][col] = 3;
-			
+			console.log(hitCount)
 		    } else if (gameBoard[row][col] == 1) {
 			    e.target.style.background = 'red';
 			    gameBoard[row][col] = 2;
 			    hitCount++;
 			
-			    if (hitCount == 17) {
+			    if (hitCount == 17) {alert("Game Over You Win!")
 				//Run Endgame Victory Screen
 			    }
 		    } else if (gameBoard[row][col] > 1) {
 			    alert("This location has already been hit!");
 		}		
-    }console.log(gameBoard)
+    }
     e.stopPropagation();
 }
 
-function shipPlacement(e) {
+function shipPlacementP1(e) {
     // if item clicked (e.target) is not the parent element on which the event listener was set (e.currentTarget)
+	let row = e.target.id.substring(1,2);
+	let col = e.target.id.substring(2,3);
+		if(gameBoardGrid.className = PlayerOneBoard) {	
+	
 	if (e.target !== e.currentTarget) {
-        // extract row and column # from the HTML element's id
-		let row = e.target.id.substring(1,2);
-		let col = e.target.id.substring(2,3);
-        //alert("Clicked on row " + row + ", col " + col);
-				
-		
+        
 		if (gameBoardPlayer1[row][col] == 0) {
 			e.target.style.background = '#bbb';
 			
 			gameBoardPlayer1[row][col] = 1;
-			
+			e.target.style.background = 'blue'
 		} else if (gameBoardPlayer1[row][col] == 1) {
-			e.target.style.background = 'red';
-			
+			e.target.style.background = '#bbb';
 			gameBoardPlayer1[row][col] = 0;
             
 			shipCount++;
@@ -192,6 +194,25 @@ function shipPlacement(e) {
 			
 		
 		} 	
-    }
-    e.stopPropagation();
+
+	else if(gameBoardGrid.className = PlayerTwoBoard){
+	if (e.target !== e.currentTarget) {
+        
+		if (gameBoardPlayer2[row][col] == 0) {
+			e.target.style.background = '#bbb';
+			
+			gameBoardPlayer2[row][col] = 1;
+			e.target.style.background = 'blue'
+		} else if (gameBoardPlayer2[row][col] == 1) {
+			e.target.style.background = '#bbb';
+			gameBoardPlayer2[row][col] = 0;
+            
+			shipCount++;
+			if (shipCount == 17) {
+				alert(`You have placed all your ships click "Continue" to finish` );
+			}
 }
+    }}
+    e.stopPropagation();
+}}}
+
